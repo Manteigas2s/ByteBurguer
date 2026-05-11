@@ -13,6 +13,7 @@ while True:
         print(f"{i+1}. {item} ........ R$ {precos[i]:.2f}")
         
     nome_cliente = input("Digite seu nome: ")
+    clientes.append(nome_cliente)
     if nome_cliente == "fim":
         break
     else:
@@ -24,9 +25,12 @@ while True:
             break
         pedidos_itens.append(itens[pedido_cliente-1])
         pedidos_precos.append(precos[pedido_cliente-1])
+        soma = sum(pedidos_precos)
+
+    for i, item in enumerate(pedidos_itens):
+        print(f" - {item} ........ R$ {pedidos_precos[i]:.2f}")
+
+    print(f"TOTAL: R$ {soma:.2f}")
+    faturamento += soma
 
 
-        
-
-            
-    
